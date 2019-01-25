@@ -2,6 +2,6 @@
 {
     public interface IHandler<T> where T : class
     {
-        void Handle(T command);
+        object Handle(T command);
     }
 }

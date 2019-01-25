@@ -19,7 +19,7 @@ namespace SnackBar.Domain.Handlers
             _orderRepository = orderRepository;
         }
 
-        public void Handle(OrderCommand command)
+        public object Handle(OrderCommand command)
         {
             if (command.Snacks.Count > 0)
             {
@@ -47,7 +47,10 @@ namespace SnackBar.Domain.Handlers
                 }
 
                 _orderRepository.Save(order);
+                return order;
             }
+
+            return null;
         }
     }
 }

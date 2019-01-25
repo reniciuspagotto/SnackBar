@@ -22,9 +22,9 @@ namespace SnackBar.Api.Controllers
         }
 
         [HttpPost]
-        public void Save(OrderCommand command)
+        public object Save(OrderCommand command)
         {
-            _orderHandler.Handle(command);
+            return _orderHandler.Handle(command);
         }
 
         [HttpGet]
